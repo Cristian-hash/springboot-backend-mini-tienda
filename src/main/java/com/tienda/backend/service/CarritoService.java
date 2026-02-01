@@ -16,5 +16,9 @@ public class CarritoService {
     public void agregarProducto(Producto producto) {
         carrito.add(producto);
     }
+
+    public List<Producto> obtenerProducto(){
+        return carrito;
+    }
 }
-//comentario para grabar mi avance.
+//comentario para grabar mi avance
