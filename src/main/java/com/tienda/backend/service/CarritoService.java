@@ -14,11 +14,15 @@ public class CarritoService {
     }
 
     public void agregarProducto(Producto producto) {
-        carrito.add(producto);
-    }
 
+        //para duplicados
+        /*for (Producto p : carrito) {
+            if (p.getId() == producto.getId()) return;
+        }*/
+        carrito.add(producto);
+
+    }
     public List<Producto> obtenerProducto(){
         return carrito;
     }
 }
-//comentario para grabar mi avance
