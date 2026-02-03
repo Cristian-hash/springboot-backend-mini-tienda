@@ -25,4 +25,10 @@ public class CarritoService {
     public List<Producto> obtenerProducto(){
         return carrito;
     }
+
+    public void vaciarCarrito(){
+        carrito.clear();
+    }
+
+    public void eliminarProductoPorId(Long id) { carrito.removeIf(p -> p.getId()==id);}
 }
