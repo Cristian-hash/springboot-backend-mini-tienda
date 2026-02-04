@@ -30,5 +30,5 @@ public class CarritoService {
         carrito.clear();
     }
 
-    public void eliminarProductoPorId(Long id) { carrito.removeIf(p -> p.getId()==id);}
+    public void eliminarProductoPorId(Long id) { carrito.removeIf(p -> p.getId().equals(id));}
 }

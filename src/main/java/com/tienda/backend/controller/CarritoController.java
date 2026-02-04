@@ -2,10 +2,7 @@ package com.tienda.backend.controller;
 
 import com.tienda.backend.model.Producto;
 import com.tienda.backend.service.CarritoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,12 +13,24 @@ public class CarritoController {
     public CarritoController(CarritoService carritoService){
         this.carritoService=carritoService;
     }
+
     @PostMapping("/carrito/productos")
     public void agregarProductoAlCarrito(@RequestBody Producto producto){
         carritoService.agregarProducto(producto);
     }
+
     @GetMapping("/carrito")
     public List<Producto> listarProductosDelCarrito(){
         return carritoService.obtenerProducto();
+    }
+
+    @DeleteMapping("/carrito")
+    public void vaciarProductosDelCarrito(){
+        carritoService.vaciarCarrito();
+    }
+
+    @DeleteMapping("/carrito/{id}")
+    public void eliminarProductoUsandoId(@PathVariable Long id){
+        carritoService.eliminarProductoPorId(id);
     }
 }

@@ -1,17 +1,17 @@
 package com.tienda.backend.model;
 
 public class Producto {
-    private int id;
+    private Long id;
     private String name;
     private Double price;
 
-    public Producto(int id,String name,Double price){
+    public Producto(Long id,String name,Double price){
         this.id=id;
         this.name=name;
         this.price=price;
     }
 
-    public int getId(){
+    public Long getId(){
         return id;
     }
 
@@ -24,7 +24,7 @@ public class Producto {
     }
 
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
