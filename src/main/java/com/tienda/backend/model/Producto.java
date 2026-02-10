@@ -23,7 +23,6 @@ public class Producto {
         return price;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }

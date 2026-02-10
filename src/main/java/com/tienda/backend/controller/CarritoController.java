@@ -4,6 +4,8 @@ import com.tienda.backend.model.Producto;
 import com.tienda.backend.service.CarritoService;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
