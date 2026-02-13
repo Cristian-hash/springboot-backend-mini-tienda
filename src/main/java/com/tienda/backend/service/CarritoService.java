@@ -16,9 +16,9 @@ public class CarritoService {
     public void agregarProducto(Producto producto) {
 
         //para duplicados
-        /*for (Producto p : carrito) {
-            if (p.getId() == producto.getId()) return;
-        }*/
+        //for (Producto p : carrito) {
+          //  if (p.getId() == producto.getId()) return;
+        //}
         carrito.add(producto);
 
     }
