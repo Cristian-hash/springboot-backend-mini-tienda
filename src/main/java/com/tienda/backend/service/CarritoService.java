@@ -14,13 +14,21 @@ public class CarritoService {
     }
 
     public void agregarProducto(Producto producto) {
-
-        //para duplicados
-        //for (Producto p : carrito) {
-          //  if (p.getId() == producto.getId()) return;
-        //}
+        if(carrito.size()>=10){
+            throw new RuntimeException("Maximo 3 productos");
+        }
+        // para duplicados
+        // for (Producto p : carrito) {
+        //  if (p.getId() == producto.getId()) return;
+        // }
         carrito.add(producto);
-
+    }
+    public double calcularTotal() {
+        double total = 0;
+        for (Producto p : carrito) {
+            total += p.getPrice();
+        }
+        return total;
     }
     public List<Producto> obtenerProducto(){
         return carrito;

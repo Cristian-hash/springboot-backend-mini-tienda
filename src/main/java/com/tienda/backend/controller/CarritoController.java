@@ -26,7 +26,6 @@ public class CarritoController {
     public List<Producto> listarProductosDelCarrito(){
         return carritoService.obtenerProducto();
     }
-
     @DeleteMapping("/carrito")
     public void vaciarProductosDelCarrito(){
         carritoService.vaciarCarrito();
@@ -35,5 +34,9 @@ public class CarritoController {
     @DeleteMapping("/carrito/{id}")
     public void eliminarProductoUsandoId(@PathVariable Long id){
         carritoService.eliminarProductoPorId(id);
+    }
+    @GetMapping("/carrito/total")
+    public double obtenerTotal() {
+        return carritoService.calcularTotal();
     }
 }
