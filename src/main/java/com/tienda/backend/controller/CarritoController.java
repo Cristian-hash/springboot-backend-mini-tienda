@@ -16,7 +16,7 @@ public class CarritoController {
     public CarritoController(CarritoService carritoService){
         this.carritoService=carritoService;
     }
-
+    //6-Controller: recibe y enruta
     @PostMapping("/carrito/productos")
     public void agregarProductoAlCarrito(@RequestBody Producto producto){
         carritoService.agregarProducto(producto);
@@ -24,8 +24,8 @@ public class CarritoController {
 
     @GetMapping("/carrito")
     public List<Producto> listarProductosDelCarrito(){
-        return carritoService.obtenerProducto();
-    }
+        return carritoService.obtenerProducto();}
+
     @DeleteMapping("/carrito")
     public void vaciarProductosDelCarrito(){
         carritoService.vaciarCarrito();

@@ -15,15 +15,12 @@ public class CarritoService {
     public CarritoService(){
         this.carrito =new ArrayList();
     }
-
+    //7-Service backend: decide si se puede agregar
     public void agregarProducto(Producto producto) {
+        //8-Response: devuelve éxito o error.
         if(carrito.size()>=5){
             throw new RuntimeException("Maximo 5 productos");
         }
-        // para duplicados
-        // for (Producto p : carrito) {
-        //  if (p.getId() == producto.getId()) return;
-        // }
         producto.setId(contador.getAndIncrement());//id UNICO
         carrito.add(producto);
     }
