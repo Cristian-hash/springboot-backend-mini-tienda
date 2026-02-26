@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-
+@RequestMapping("/carrito")
 @CrossOrigin(origins = "http://localhost:4200")
+
 @RestController
 public class CarritoController {
     private CarritoService carritoService;
@@ -17,25 +18,25 @@ public class CarritoController {
         this.carritoService=carritoService;
     }
     //6-Controller: recibe y enruta
-    @PostMapping("/carrito/productos")
+    @PostMapping("/productos")
     public void agregarProductoAlCarrito(@RequestBody Producto producto){
         carritoService.agregarProducto(producto);
     }
 
-    @GetMapping("/carrito")
+    @GetMapping
     public List<Producto> listarProductosDelCarrito(){
         return carritoService.obtenerProducto();}
 
-    @DeleteMapping("/carrito")
+    @DeleteMapping
     public void vaciarProductosDelCarrito(){
         carritoService.vaciarCarrito();
     }
 
-    @DeleteMapping("/carrito/{id}")
+    @DeleteMapping("/{id}")
     public void eliminarProductoUsandoId(@PathVariable Long id){
         carritoService.eliminarProductoPorId(id);
     }
-    @GetMapping("/carrito/total")
+    @GetMapping("/total")
     public double obtenerTotal() {
         return carritoService.calcularTotal();
     }
