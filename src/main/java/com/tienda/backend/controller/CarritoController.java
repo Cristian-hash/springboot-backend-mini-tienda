@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 @RequestMapping("/carrito")
+
+//EXPLICACION DE LOS CORS ,EXITE EN EL DIA 5 DE CORS.
 @CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
