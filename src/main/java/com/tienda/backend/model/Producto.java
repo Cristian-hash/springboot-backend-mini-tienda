@@ -5,6 +5,9 @@ public class Producto {
     private String name;
     private Double price;
 
+    public Producto() {
+        // constructor vacío para Jackson
+    }
     public Producto(Long id,String name,Double price){
         this.id=id;
         this.name=name;
