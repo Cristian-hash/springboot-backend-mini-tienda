@@ -27,7 +27,7 @@ public class CarritoController {
 
     @GetMapping
     public List<Producto> listarProductosDelCarrito(){
-        return carritoService.obtenerProducto();}
+        return carritoService.obtenerProductos();}
 
     @DeleteMapping
     public void vaciarProductosDelCarrito(){

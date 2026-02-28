@@ -9,10 +9,12 @@ import java.util.concurrent.atomic.AtomicLong;//id UNICO
 
 @Service
 public class CarritoService {
+    //2-Se guarda en una List<Producto>
     private List<Producto> carrito;
     private AtomicLong contador = new AtomicLong(1);//id UNICO
 
     public CarritoService(){
+        //1-El carrito vive en memoria
         this.carrito =new ArrayList();
     }
     //7-Service backend: decide si se puede agregar
@@ -31,7 +33,7 @@ public class CarritoService {
         }
         return total;
     }
-    public List<Producto> obtenerProducto(){
+    public List<Producto> obtenerProductos(){
         return carrito;
     }
 
