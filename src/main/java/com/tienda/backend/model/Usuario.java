@@ -15,7 +15,8 @@ public class Usuario {
 
     private String nombre;
     private String email;
-
+//me explicaron- lei por que se dice que **Quién solo transporta datos** → Entity
+// y estoy a medio camino de Quién solo llama / pide datos → Repository
     public Usuario() {
     }
 
