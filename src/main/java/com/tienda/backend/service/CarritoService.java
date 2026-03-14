@@ -48,4 +48,8 @@ public class CarritoService {
         );
         System.out.println("ID a eliminar: " + id);
         carrito.removeIf(p -> p.getId().equals(id));}
+
+
+
+
 }
