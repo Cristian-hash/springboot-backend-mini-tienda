@@ -21,4 +21,6 @@ public class UsuarioService {
     public List<Usuario> listar() {
         return repo.findAll();
     }
+
+
 }

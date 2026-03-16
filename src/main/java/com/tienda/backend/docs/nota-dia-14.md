@@ -1,0 +1,3 @@
+- UserRepository creado (JpaRepository<Usuario, Long>)
+- Métodos usados: save(), findAll()
+- Service invoca repo; repo no contiene lógica
