@@ -1,5 +1,7 @@
 package com.tienda.backend.model;
+import jakarta.persistence.Entity;
 
+@Entity
 public class Producto {
     private Long id;
     private String name;
