@@ -1,9 +1,9 @@
 package com.tienda.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Carrito {
@@ -11,4 +11,25 @@ public class Carrito {
     @GeneratedValue ( strategy   = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Producto> productos = new ArrayList<>();
+
+    public Long getId(){
+        return id;
+    }
+    public List getProductos(){
+        return productos;
+    }
+
+    public void agregarProductos(Producto producto){
+        this.productos.add(producto);
+    }
+
+    public void vaciar(){
+        this.productos.clear();
+    }
+
+    public void eliminarProducto(Long id){
+        this.productos.removeIf(p -> p.getId().equals(id));
+    }
 }
