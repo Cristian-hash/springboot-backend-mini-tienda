@@ -1,5 +1,6 @@
 package com.tienda.backend.controller;
 
+import com.tienda.backend.model.Carrito;
 import com.tienda.backend.model.Producto;
 import com.tienda.backend.service.CarritoService;
 import org.springframework.web.bind.annotation.*;
@@ -7,12 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-@RequestMapping("/carrito")
+
 
 //EXPLICACION DE LOS CORS ,EXITE EN EL DIA 5 DE CORS.
+@RestController
+@RequestMapping("/carrito")
 @CrossOrigin(origins = "http://localhost:4200")
 
-@RestController
 public class CarritoController {
     private CarritoService carritoService;
 
@@ -20,26 +22,34 @@ public class CarritoController {
         this.carritoService=carritoService;
     }
     //6-Controller: recibe y enruta
-    @PostMapping("/productos")
-    public void agregarProductoAlCarrito(@RequestBody Producto producto){
-        carritoService.agregarProducto(producto);
+    @PostMapping
+    public Carrito crearCarrito(){
+        return carritoService.crearCarrito();
     }
 
-    @GetMapping
-    public List<Producto> listarProductosDelCarrito(){
-        return carritoService.obtenerProductos();}
+    @PostMapping("/{id}/productos")
+    public Carrito agregarProductoAlCarrito(@PathVariable Long id,@RequestBody Producto producto){
+        return carritoService.agregarProducto(id,producto);
+    }
 
-    @DeleteMapping
-    public void vaciarProductosDelCarrito(){
-        carritoService.vaciarCarrito();
+    @GetMapping("/{id}")
+    public List<Producto> listarProductosDelCarrito(@PathVariable Long id){
+        return carritoService.obtenerProductos(id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarProductoUsandoId(@PathVariable Long id){
-        carritoService.eliminarProductoPorId(id);
+    public void vaciarProductosDelCarrito(@PathVariable Long id){
+        carritoService.vaciarCarrito(id);
     }
-    @GetMapping("/total")
-    public double obtenerTotal() {
-        return carritoService.calcularTotal();
+
+    @DeleteMapping("/{id}/producto/{productoId}")
+    public void eliminarProducto(@PathVariable Long id,@PathVariable Long productoId ){
+        carritoService.eliminarProductoPorId(id,productoId);
     }
 }
+
+/*
+@GetMapping("/total")
+public double obtenerTotal() {
+    return carritoService.calcularTotal();
+}*/

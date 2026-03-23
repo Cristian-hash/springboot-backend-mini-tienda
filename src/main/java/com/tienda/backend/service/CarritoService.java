@@ -28,7 +28,7 @@ public class CarritoService {
             throw new RuntimeException("exceso de productos");
         }
 
-        carrito.agregarProductos();
+        carrito.agregarProductos(producto);
         return carritoRepository.save(carrito);
     }
 
@@ -38,26 +38,26 @@ public class CarritoService {
         return carrito.getProductos();
     }
 
+    public void vaciarCarrito(Long carritoId){
+        Carrito carrito = carritoRepository.findById(carritoId)
+                .orElseThrow(()->new RuntimeException("Carrito no encontrado"));
 
-
-    public void vaciarCarrito(){
-        carrito.clear();
+        carrito.vaciar();
+        carritoRepository.save(carrito);
     }
 
-    public void eliminarProductoPorId(Long id) {
-        carrito.forEach(p ->
-                System.out.println("Producto en carrito ID: " + p.getId())
-        );
-        System.out.println("ID a eliminar: " + id);
-        carrito.removeIf(p -> p.getId().equals(id));}
+    public void eliminarProductoPorId(Long carritoId,Long ProductoId){
+        Carrito carrito = carritoRepository.findById(carritoId)
+                .orElseThrow(() -> new RuntimeException("Carrito no encontrado"));
 
-    public Carrito guardar(Carrito carrito){
-       return carritoRepository.save(carrito);
+        carrito.eliminarProducto(ProductoId);
+        carritoRepository.save(carrito);
     }
+}
 
-    public List<Carrito> obtenerTodos(){
-        return carritoRepository.findAll();
-    }
+
+
+
 
 //METODOS QUE ESTA USANDO EL FRONT
     /* 1-
@@ -68,5 +68,21 @@ public class CarritoService {
         }
         return total;
     }
+    *2
+    public void eliminarProductoPorId(Long id) {
+    carrito.forEach(p ->
+            System.out.println("Producto en carrito ID: " + p.getId())
+    );
+    System.out.println("ID a eliminar: " + id);
+    carrito.removeIf(p -> p.getId().equals(id));}
+
+    *3
+    public Carrito guardar(Carrito carrito){
+       return carritoRepository.save(carrito);
+    }
+
+    *4
+    public List<Carrito> obtenerTodos(){
+        return carritoRepository.findAll();
+    }
     */
-}
