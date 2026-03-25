@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Base de datos H2
+*.mv.db
+*.trace.db
+
+# Carpeta data
+/data/
+file/data/

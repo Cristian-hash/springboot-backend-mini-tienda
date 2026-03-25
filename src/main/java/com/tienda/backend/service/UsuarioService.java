@@ -8,19 +8,17 @@ import java.util.List;
 
 @Service
 public class UsuarioService {
-    private final UserRepository repo;
+    private final UserRepository usuarioRepository;
 
-    public UsuarioService(UserRepository repo) {
-        this.repo = repo;
+    public UsuarioService(UserRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario crear(Usuario u) {
-        return repo.save(u);
+    public Usuario crearUsuario(Usuario usuario) {
+        return usuarioRepository.save(usuario);
     }
 
     public List<Usuario> listar() {
-        return repo.findAll();
+        return usuarioRepository.findAll();
     }
-
-
 }
