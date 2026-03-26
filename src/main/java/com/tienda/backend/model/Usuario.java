@@ -1,9 +1,6 @@
 package com.tienda.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
 @Entity
 public class Usuario {
@@ -12,8 +9,12 @@ public class Usuario {
     private Long id;
     private String nombre;
     private String email;
-//me explicaron- lei por que se dice que **Quién solo transporta datos** → Entity
-// y estoy a medio camino de Quién solo llama / pide datos → Repository
+
+    //“Un Usuario tiene exactamente un Carrito, y ese carrito le pertenece”.
+    //“cascade-Lo que le pase al Usuario, también le pasa al Carrito”
+    @OneToOne(cascade = CascadeType.ALL)
+    private Carrito carrito;
+
     public Usuario() {}
 
     public Long getId() {
@@ -40,5 +41,13 @@ public class Usuario {
         this.id=id;
         this.nombre=nombre;
         this.email=email;
+    }
+
+    public void setCarrito(Carrito carrito){
+        this.carrito=carrito;
+    }
+
+    public Carrito getCarrito(){
+        return carrito;
     }
 }
