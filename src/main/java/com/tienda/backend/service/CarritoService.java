@@ -6,18 +6,18 @@ import com.tienda.backend.model.Usuario;
 import com.tienda.backend.repository.CarritoRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;//id UNICO
-import com.tienda.backend.repository.UserRepository;
+
+import com.tienda.backend.repository.UsuarioRepository;
+
 @Service
 public class CarritoService {
     private final CarritoRepository carritoRepository;
-    private final UserRepository userRepository;
+    private final UsuarioRepository usuarioRepository;
 
-    public CarritoService(CarritoRepository carritoRepository,UserRepository userRepository){
+    public CarritoService(CarritoRepository carritoRepository, UsuarioRepository usuarioRepository){
         this.carritoRepository=carritoRepository;
-        this.userRepository=userRepository;
+        this.usuarioRepository = usuarioRepository;
     }
 
     public Carrito crearCarrito(){
@@ -25,16 +25,16 @@ public class CarritoService {
     }
 
     public Carrito agregarProducto(Long usuarioId,Producto producto){
-        Usuario usuario = userRepository.findById(usuarioId)
+        Usuario usuario = usuarioRepository.findById(usuarioId)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         Carrito carrito= usuario.getCarrito();
 
-        if(carrito.getProductos().size()>5){
+        if(carrito.getProductos().size()>=5){
             throw new RuntimeException("exceso de productos");
         }
 
-        carrito.agregarProductos(producto);
+        carrito.agregarProducto(producto);
         return carritoRepository.save(carrito);
     }
 

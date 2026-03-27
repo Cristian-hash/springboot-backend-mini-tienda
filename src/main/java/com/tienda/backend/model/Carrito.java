@@ -17,15 +17,16 @@ public class Carrito {
     public Long getId(){
         return id;
     }
-    public List getProductos(){
+    public List <Producto> getProductos(){
         return productos;
     }
 
-    public void agregarProductos(Producto producto){
+    public void agregarProducto(Producto producto){
         this.productos.add(producto);
     }
 
     public void vaciar(){
+
         this.productos.clear();
     }
 

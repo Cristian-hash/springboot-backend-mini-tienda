@@ -2,16 +2,16 @@ package com.tienda.backend.service;
 
 import com.tienda.backend.model.Carrito;
 import com.tienda.backend.model.Usuario;
-import com.tienda.backend.repository.UserRepository;
+import com.tienda.backend.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UsuarioService {
-    private final UserRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
 
-    public UsuarioService(UserRepository usuarioRepository) {
+    public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
