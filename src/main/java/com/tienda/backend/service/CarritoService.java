@@ -43,7 +43,13 @@ public class CarritoService {
                 .orElseThrow(() -> new RuntimeException("Carrito no encontrado"));
         return carrito.getProductos();
     }
+    public void eliminarProductoPorId(Long carritoId,Long ProductoId){
+        Carrito carrito = carritoRepository.findById(carritoId)
+                .orElseThrow(() -> new RuntimeException("Carrito no encontrado"));
 
+        carrito.eliminarProducto(ProductoId);
+        carritoRepository.save(carrito);
+    }
     public void vaciarCarrito(Long carritoId){
         Carrito carrito = carritoRepository.findById(carritoId)
                 .orElseThrow(()->new RuntimeException("Carrito no encontrado"));
@@ -52,13 +58,7 @@ public class CarritoService {
         carritoRepository.save(carrito);
     }
 
-    public void eliminarProductoPorId(Long carritoId,Long ProductoId){
-        Carrito carrito = carritoRepository.findById(carritoId)
-                .orElseThrow(() -> new RuntimeException("Carrito no encontrado"));
 
-        carrito.eliminarProducto(ProductoId);
-        carritoRepository.save(carrito);
-    }
 }
 
 

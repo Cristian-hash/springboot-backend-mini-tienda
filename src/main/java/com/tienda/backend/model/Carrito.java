@@ -22,6 +22,7 @@ public class Carrito {
     }
 
     public void agregarProducto(Producto producto){
+
         this.productos.add(producto);
     }
 
@@ -31,6 +32,7 @@ public class Carrito {
     }
 
     public void eliminarProducto(Long id){
+
         this.productos.removeIf(p -> p.getId().equals(id));
     }
 }
