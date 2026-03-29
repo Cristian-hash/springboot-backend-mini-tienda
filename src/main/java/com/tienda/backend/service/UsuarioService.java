@@ -24,4 +24,12 @@ public class UsuarioService {
     public List<Usuario> listar() {
         return usuarioRepository.findAll();
     }
+
+    public Usuario login(String email){
+        return usuarioRepository.findAll().stream()
+                .filter(u ->u.getEmail().equals(email))
+                .findFirst()
+                .orElseThrow(()-> new RuntimeException("Usuario no encontrado"));
+    }
+
 }

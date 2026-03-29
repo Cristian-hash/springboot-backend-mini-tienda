@@ -1,5 +1,6 @@
 package com.tienda.backend.controller;
 
+import com.tienda.backend.dto.LoginRequest;
 import com.tienda.backend.model.Usuario;
 import com.tienda.backend.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
@@ -11,20 +12,26 @@ import java.util.List;
 @CrossOrigin(origins="http://localhost:4200")
 public class UsuarioController {
 
-    private final UsuarioService service;
+    private final UsuarioService usuarioService;
 
-    public UsuarioController(UsuarioService service){
-        this.service = service;
+    public UsuarioController(UsuarioService usuarioService){
+        this.usuarioService = usuarioService;
     }
 
     @PostMapping
     public Usuario crear(@RequestBody Usuario usuario) {
 
-        return service.crearUsuario(usuario);
+        return usuarioService.crearUsuario(usuario);
     }
 
     @GetMapping
     public List<Usuario>listar(){
-        return service.listar();
+        return usuarioService.listar();
     }
+
+    @PostMapping("/login")
+    public Usuario login(@RequestBody LoginRequest request){
+        return usuarioService.login(request.getEmail());
+    }
+
 }
