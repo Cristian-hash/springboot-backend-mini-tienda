@@ -57,13 +57,7 @@ public class CarritoService {
         carrito.vaciar();
         carritoRepository.save(carrito);
     }
-
-
 }
-
-
-
-
 
 //METODOS QUE ESTA USANDO EL FRONT
     /* 1-
