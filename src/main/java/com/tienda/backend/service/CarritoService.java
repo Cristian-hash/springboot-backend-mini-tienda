@@ -62,7 +62,7 @@ public class CarritoService {
 //METODOS QUE ESTA USANDO EL FRONT
     /* 1-
     public double calcularTotal() {
-        double total = 0;
+        double total = 0;s
         for (Producto p : carrito) {
             total += p.getPrice();
         }
