@@ -5,6 +5,7 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
+import java.util.Date;
 
 @Service
 public class JwtService {
@@ -18,4 +19,23 @@ public class JwtService {
                 .signWith(key)
                 .compact();
     }
+
+    public String extraerEmail(String token){
+        return Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
+
+    public boolean esValido(String token){
+        try{
+            extraerEmail(token);
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+    }
+
 }

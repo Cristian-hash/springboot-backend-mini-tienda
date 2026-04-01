@@ -30,7 +30,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public Usuario login(@RequestBody LoginRequest request){
+    public String login(@RequestBody LoginRequest request){
         return usuarioService.login(request.getEmail());
     }
 
