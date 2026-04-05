@@ -32,6 +32,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
             if(!jwtService.esValido(token)){
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("Token invalido");
                 return;
             }
             String email = jwtService.extraerEmail(token);

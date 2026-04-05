@@ -3,6 +3,7 @@ package com.tienda.backend.controller;
 import com.tienda.backend.dto.LoginRequest;
 import com.tienda.backend.model.Usuario;
 import com.tienda.backend.service.UsuarioService;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,4 +35,8 @@ public class UsuarioController {
         return usuarioService.login(request.getEmail());
     }
 
+    @GetMapping("/perfil")
+    public String perfil(){
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
 }
