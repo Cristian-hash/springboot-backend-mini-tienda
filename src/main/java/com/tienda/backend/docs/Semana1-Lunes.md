@@ -1,24 +1,48 @@
 “Mi tesis construye una plataforma que enseña fundamentos y patrones de diseño para ayudar al estudiante a elegir bien.”
 
 
-escribes el problema central,
+👉 Problema central
 
-Que los estudiantes conoscan y comprendan los fundametos de Patrones de diseño ,asi que cuando esten trabajando ,dado que saben un poco mas d e realidad del problema que se les de
-sepan que patron elegir correctamente, ya que ellos tienen una vista mucho mejor que la IA ,una vista mas real de la problematica.
+Los estudiantes de programación conocen los patrones de diseño a nivel teórico, pero presentan dificultad al momento de identificar cuándo y por qué aplicar cada uno en situaciones reales de desarrollo.
+Esta dificultad limita su capacidad para tomar decisiones de diseño adecuadas en el trabajo.
 
 
+👉 Visión de la plataforma
 
-escribes la visión de tu plataforma,
+Proporcionar una plataforma que permita a los estudiantes comprender los fundamentos de programación y los patrones de diseño mediante ejercicios guiados, de modo que puedan tomar decisiones correctas al enfrentar problemas reales, independientemente del lenguaje o herramienta utilizada.
 
-Una ayuda para comprender los fundamentos,y asi a los estudiantes, independientemente del lenguaje o framework que tengn que usar por sus trabajos
-sepan que patron usar, tengan los fundamentos rapidamente su entendimiento. un repaso, y sepan como aplicar 
-en su trabajo ,mundo real, y puedan avanzar.
+5️⃣ POR QUÉ EXISTE
+👉 Justificación
 
-defines por qué existe,
+La plataforma existe porque en el desarrollo de software las herramientas y frameworks cambian constantemente, mientras que los fundamentos y principios de diseño permanecen estables.
 
-para ayudar a muchachos que como puedan tener los fundamentos claros. ya que las herramientas cambian pero los 
-los fundamntos se mantienen.
+Por ello, formar el criterio del estudiante permite adaptarse a cualquier entorno tecnológico.
 
-defines a quién ayuda.
 
-A los estudiantes ,quienes como yo, estudiaron el patron, solo que cuando llegan a trabajar y deben elegir ,no ven tan clara la situacion de donde usarla
+6️⃣ A QUIÉN AYUDA
+
+👉 Público objetivo
+
+Estudiantes de programación que han aprendido patrones de diseño de forma teórica, pero requieren fortalecer su capacidad de análisis y toma de decisiones para aplicarlos correctamente en el entorno laboral.
+
+7️⃣ RESULTADO FINAL
+
+📄 PROBLEMA
+
+Los estudiantes de programación conocen los patrones de diseño a nivel teórico, pero presentan dificultad al momento de identificar cuándo y por qué aplicar cada uno en situaciones reales de desarrollo, lo que limita su capacidad de tomar decisiones de diseño adecuadas.
+
+🌍 VISIÓN
+
+Proporcionar una plataforma que permita a los estudiantes comprender los fundamentos y patrones de diseño mediante ejercicios guiados, facilitando la toma de decisiones correctas en problemas reales, independientemente del lenguaje o framework utilizado.
+
+🎯 PROPÓSITO
+
+La plataforma existe porque las herramientas cambian constantemente, mientras que los fundamentos permanecen, por lo que desarrollar criterio permite adaptarse a distintos contextos tecnológicos.
+
+👤 USUARIO OBJETIVO
+
+Estudiantes de programación que conocen patrones de diseño de forma teórica y buscan aplicarlos correctamente en situaciones reales.
+
+🎯 EJEMPLO
+“Muchos estudiantes saben qué es un patrón, pero cuando trabajan no saben cuál usar. Mi tesis busca cambiar eso enseñando a tomar decisiones, no solo a memorizar.”
+
