@@ -28,11 +28,11 @@ El Pseudocódigo del cerebro evaluador (EvaluacionService).
 
 2️⃣ MEDIR (Tu sistema gamificado)
 
-[ ] ¿Completé los 7 bloques de 90 minutos de esta semana?
+[X] ¿Completé los 7 bloques de 90 minutos de esta semana?
 
-[ ] ¿Escribí y guardé los 7 Ladrillos documentados?
+[X] ¿Escribí y guardé los 7 Ladrillos documentados?
 
-[ ] ¿Hice los commits diarios en mi repositorio de documentación?
+[X] ¿Hice los commits diarios en mi repositorio de documentación?
 
 [ ] Medición de Claridad: Del 1 al 10, ¿qué tan claro tengo el diseño de mi base de datos y cómo viaja la información? (Si es menos de 8, revisa tus notas de los días 10 y 12).
 
